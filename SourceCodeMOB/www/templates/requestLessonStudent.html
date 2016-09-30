@@ -1,0 +1,48 @@
+<ion-view view-title="Request Lesson">
+  <ion-content>
+
+  <form ng-submit="sendRequest()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Date</span>
+           <input  type="date" class="form-control"  ng-model="request.date">
+        </label>
+
+         
+        <label class="item item-input">
+          <span class="input-label">Type of Lesson</span>
+           <select class="form-control"
+                               ng-model="request.lessonType"
+                               ng-options="lesson.value as lesson.label for lesson in lessonTypes">
+                                <option value="">Type of Lesson?</option>
+                            </select>
+        </label>
+
+<label class="item item-input">
+          <span class="input-label">Lesson Start Time</span>
+        <select class="form-control"
+                               ng-model="request.startHour"
+                               ng-options="lessonStart.value as lessonStart.label for lessonStart in lessonStartTime">
+                                <option value="">Lesson Start Time?</option>
+                            </select>
+ </label>
+
+<label class="item item-input">
+          <span class="input-label">Teacher</span>
+ <select class="form-control"
+                               ng-model="request.teacher" ng-options="teacher._id as teacher.firstname for teacher in teachers">
+                                <option value="">Teacher?</option>
+                            </select>
+ </label>
+
+
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Request Lesson</button>
+        </label>
+      </div>
+
+    </form>
+
+    </ion-content>
+</ion-view>
+

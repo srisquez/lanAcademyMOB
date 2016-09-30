@@ -1,0 +1,48 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Your Question</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeFeedback()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="sendFeedback()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">First Name</span>
+          <input type="text" ng-model="feedbackItem.firstname">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Last Name</span>
+          <input type="text" ng-model="feedbackItem.lastname">
+        </label>
+         <label class="item item-input">
+          <span class="input-label">Contact Tel.</span>
+          <div><input type="tel"  id="areacode" name="areacode" 
+                                    ng-model="tel.areaCode">
+          </div>
+          <div>
+         <input type="tel"  id="telnum" name="telnum" 
+                                    ng-model="tel.number">
+          </div>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" ng-model="feedbackItem.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Subject</span>
+          <input type="text" ng-model="feedbackItem.subject">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Your Question</span>
+            <textarea type="text" ng-model="feedbackItem.question"></textarea>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Send Question</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

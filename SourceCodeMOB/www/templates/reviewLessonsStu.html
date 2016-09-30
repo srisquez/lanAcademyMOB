@@ -1,0 +1,25 @@
+<ion-view view-title="Review Lessons">
+  <ion-nav-buttons side="secondary">
+      <div class="buttons">
+        <button class="button button-icon icon ion-ios-minus-outline"
+          ng-click="toggleDelete()"></button>
+      </div>
+    </ion-nav-buttons>
+  <ion-content>
+   <ion-list>
+        <ion-list show-delete="shouldShowDelete">
+      <ion-item ng-repeat="lesson in lessons" on-swipe-left="removeLesson(lesson._id)">
+
+          <div>
+             Date: {{lesson.date | date: 'yyyy-MM-dd'}} <br>
+             Type of Lesson: {{getLessonDes(lesson.lessonType);}}<br>
+             Lesson Start Time: {{lesson.startHour}}  <br>
+             Teacher: {{lesson.teacher.firstname + ' ' + lesson.teacher.lastname}} <br>
+           </div>
+        <ion-delete-button class="ion-minus-circled"
+          ng-click="removeLesson(lesson._id)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+    </ion-content>
+</ion-view>

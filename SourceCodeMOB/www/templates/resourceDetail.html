@@ -1,0 +1,23 @@
+<ion-view view-title="Speaking">
+ <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="resource in resources | filter:filtText" >
+        <div class="card">
+        	 <div class="item item-divider">
+            {{resource.name}}
+          </div>
+          <div class="item item-text-wrap">
+
+                        <h3 class="media-heading"><a  href="{{resource.url}}" target="_blank">{{resource.name}}</a> 
+                        <span class="label label-danger label-xs">{{resource.label}}</span>
+                       </h3>
+                        <p>{{resource.description}}</p>
+                    </div>
+         </div>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
+</ion-view>
+
+

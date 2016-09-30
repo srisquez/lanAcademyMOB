@@ -1,0 +1,16 @@
+<ion-view view-title="Review Lessons">
+  <ion-content>
+   <ion-list>
+        <ion-list>
+      <ion-item ng-repeat="lesson in lessons">
+
+          <div>
+             Date: {{lesson.date | date: 'yyyy-MM-dd'}} <br>
+             Type of Lesson: {{getLessonDes(lesson.lessonType);}}<br>
+             Lesson Start Time: {{lesson.startHour}}  <br>
+             Student: {{lesson.RequestedBy.firstname + ' ' + lesson.RequestedBy.lastname}} <br>
+           </div>
+      </ion-item>
+    </ion-list>
+    </ion-content>
+</ion-view>
